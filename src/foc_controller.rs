@@ -43,9 +43,9 @@ pub struct FocController <'a, E : encoder::RotorPositionSensor,
     last_t : f32,
 
     ///Drivers:
-    position_sensor : &'a  E,
+    position_sensor : &'a mut  E,
     phase_current_sensor: &'a C,
-    inverter :  &'a P,
+    inverter :  &'a mut P,
     delay : &'a D,
 }
 
@@ -57,9 +57,9 @@ where
     D : delay::BlockingDelay
 
 {
-    pub fn new(encoder_driver : &'a E,  
+    pub fn new(encoder_driver : &'a mut E,  
                current_sensor_driver : & 'a C, 
-               inverter_driver : & 'a P,
+               inverter_driver : & 'a mut P,
                delay_driver : & 'a D,
                voltage_supply : t::Volts,
                pole_pairs : t::PolePairs) -> Self {
