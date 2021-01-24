@@ -154,11 +154,11 @@ where
         }
     }
 
-    pub fn get_shaft_position_ticks(&mut self) -> t::ShaftTicks {
+    pub fn get_rotor_position_ticks(&mut self) -> t::ShaftTicks {
         self.position_sensor.read_counts()
     }
 
-    pub fn get_shaft_sensor_cpr(&mut self) -> t::ShaftTicks {
+    pub fn get_rotor_sensor_cpr(&mut self) -> t::ShaftTicks {
         self.position_sensor.get_cpr()
     }
 
